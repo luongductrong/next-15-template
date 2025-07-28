@@ -1,0 +1,16 @@
+{
+  "RootMetadata": {
+    "title": "Tạo ứng dụng Next",
+    "description": "Được tạo bởi create next app"
+  },
+  "HomePage": {
+    "title": "Bắt đầu bằng cách chỉnh sửa",
+    "filepath": "src/app/[locale]/page.tsx",
+    "save": "Lưu và xem thay đổi ngay lập tức.",
+    "deploy": "Triển khai ngay",
+    "docs": "Xem tài liệu",
+    "learn": "Học",
+    "examples": "Ví dụ",
+    "goTo": "Truy cập nextjs.org →"
+  }
+}
