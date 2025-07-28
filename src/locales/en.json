@@ -12,5 +12,9 @@
     "learn": "Learn",
     "examples": "Examples",
     "goTo": "Go to nextjs.org →"
+  },
+  "NotFoundPage": {
+    "title": "Page Not Found",
+    "description": "This page could not be found."
   }
 }

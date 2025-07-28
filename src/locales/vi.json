@@ -12,5 +12,9 @@
     "learn": "Học",
     "examples": "Ví dụ",
     "goTo": "Truy cập nextjs.org →"
+  },
+  "NotFoundPage": {
+    "title": "Không tìm thấy trang",
+    "description": "Không tìm thấy trang bạn đang tìm."
   }
 }
