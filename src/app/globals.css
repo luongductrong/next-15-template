@@ -13,11 +13,13 @@
   --font-montserrat: var(--font-montserrat);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@custom-variant dark (&:where(.dark, .dark *));
+
+.dark :root,
+:root.dark,
+.dark:root {
+  --background: #0a0a0a;
+  --foreground: #ededed;
 }
 
 body {

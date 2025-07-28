@@ -1,4 +1,6 @@
 import '@/app/globals.css';
+import { clsx } from 'clsx';
+import { cookies } from 'next/headers';
 import { routing } from '@/i18n/routing';
 import { notFound } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
@@ -22,7 +24,7 @@ const montserrat = Montserrat({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
 });
 
-export default async function RootLayout({
+export default async function AppLayout({
   children,
   params,
 }: Readonly<{
@@ -37,8 +39,15 @@ export default async function RootLayout({
   // Enable static rendering
   setRequestLocale(locale);
 
+  const cookieStore = cookies();
+  const theme = (await cookieStore).get('theme')?.value || 'light';
   return (
-    <html lang={locale}>
+    <html
+      lang={locale}
+      className={clsx({
+        dark: theme === 'dark',
+      })}
+    >
       <body className={`${geistSans.variable} ${geistMono.variable} ${montserrat.variable} antialiased`}>
         <NextIntlClientProvider>{children}</NextIntlClientProvider>
       </body>
