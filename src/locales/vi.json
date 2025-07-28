@@ -16,5 +16,9 @@
   "NotFoundPage": {
     "title": "Không tìm thấy trang",
     "description": "Không tìm thấy trang bạn đang tìm."
+  },
+  "ErrorPage": {
+    "title": "Lỗi",
+    "description": "Đã xảy ra lỗi không mong muốn."
   }
 }

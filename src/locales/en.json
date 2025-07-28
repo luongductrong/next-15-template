@@ -16,5 +16,9 @@
   "NotFoundPage": {
     "title": "Page Not Found",
     "description": "This page could not be found."
+  },
+  "ErrorPage": {
+    "title": "Error",
+    "description": "An error has occurred."
   }
 }
