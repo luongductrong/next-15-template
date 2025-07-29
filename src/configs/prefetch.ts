@@ -1,8 +1,10 @@
+import { prefetchBaseUrl } from '@/libs/environment';
+
 type PrefetchUrls = string[];
 
-export const prefetchUrls: PrefetchUrls = [];
-
-const prefetchBaseUrl = process.env.NEXT_PUBLIC_PREFETCH_BASE_URL;
+const prefetchUrls: PrefetchUrls = [];
 if (prefetchBaseUrl) {
   prefetchUrls.push(prefetchBaseUrl);
 }
+
+export { prefetchUrls };

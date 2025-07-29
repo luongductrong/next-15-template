@@ -1,5 +1,6 @@
 import '@/app/globals.css';
 import { clsx } from 'clsx';
+import { use } from 'react';
 import { cookies } from 'next/headers';
 import { prefetchDNS } from 'react-dom';
 import { routing } from '@/i18n/routing';
@@ -26,14 +27,14 @@ const montserrat = Montserrat({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
 });
 
-export default async function AppLayout({
+export default function AppLayout({
   children,
   params,
 }: Readonly<{
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
 }>) {
-  const { locale } = await params;
+  const { locale } = use(params);
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
@@ -47,7 +48,7 @@ export default async function AppLayout({
   });
 
   const cookieStore = cookies();
-  const theme = (await cookieStore).get('theme')?.value || 'light';
+  const theme = use(cookieStore).get('theme')?.value || 'light';
   return (
     <html
       lang={locale}
