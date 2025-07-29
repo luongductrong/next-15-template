@@ -1,9 +1,11 @@
 import '@/app/globals.css';
 import { clsx } from 'clsx';
 import { cookies } from 'next/headers';
+import { prefetchDNS } from 'react-dom';
 import { routing } from '@/i18n/routing';
 import { notFound } from 'next/navigation';
 import { getTranslations } from 'next-intl/server';
+import { prefetchUrls } from '@/configs/prefetch';
 import { setRequestLocale } from 'next-intl/server';
 import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { Geist, Geist_Mono, Montserrat } from 'next/font/google';
@@ -38,6 +40,11 @@ export default async function AppLayout({
 
   // Enable static rendering
   setRequestLocale(locale);
+
+  // Prefetch DNS for performance
+  prefetchUrls.forEach((url) => {
+    prefetchDNS(url);
+  });
 
   const cookieStore = cookies();
   const theme = (await cookieStore).get('theme')?.value || 'light';
